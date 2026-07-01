@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strut - Rock Solid Interfaces</title>
+    <link rel="stylesheet" href="strut.css">
+    <style>
+        /* Demo specific styles just for visualization */
+        .demo-box { background: #eef2ff; height: 100px; display: flex; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; border-radius: 4px; }
+        header { background: var(--strut-dark); color: white; padding: 2rem 0; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Strut <span style="font-weight:300; opacity: 0.8;">v0.0.1a</span></h1>
+            <p>The ultimate responsive CSS framework.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Section: Grid System -->
+        <section class="mb-2">
+            <h2>The Grid System</h2>
+            <p>Resize your browser to see the columns stack on mobile and expand on desktop.</p>
+            
+            <div class="row mt-2">
+                <div class="col-4">
+                    <div class="demo-box">Col-4</div>
+                </div>
+                <div class="col-4">
+                    <div class="demo-box">Col-4</div>
+                </div>
+                <div class="col-4">
+                    <div class="demo-box">Col-4</div>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-8">
+                    <div class="demo-box">Col-8</div>
+                </div>
+                <div class="col-4">
+                    <div class="demo-box">Col-4</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="mt-2 mb-2" style="border: 0; border-top: 1px solid #eee;">
+
+        <!-- Section: Components -->
+        <section class="mb-2">
+            <h2>Components</h2>
+            
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-4">
+                    <div class="card">
+                        <h3>Rock Solid</h3>
+                        <p class="text-muted">Built on a foundation of modern CSS variables and flexbox.</p>
+                        <button class="btn btn-primary mt-1">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-4">
+                    <div class="card">
+                        <h3>Responsive</h3>
+                        <p class="text-muted">Mobile-first approach ensures your site looks great on any device.</p>
+                        <button class="btn btn-outline mt-1">View Docs</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-4">
+                    <div class="card">
+                        <h3>Lightweight</h3>
+                        <p class="text-muted">No bloat. Just the essentials you need to build fast.</p>
+                        <a href="#" class="btn btn-primary mt-1">Download</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Utilities -->
+        <section>
+            <h2>Utilities</h2>
+            <p>Quick classes for spacing and visibility.</p>
+            <div class="p-2" style="background: #f1f5f9; border-radius: 4px;">
+                <code>.text-center</code>, <code>.mt-2</code>, <code>.hidden</code>, <code>.hide-mobile</code>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="container mt-2 p-2 text-center text-muted">
+        <small>&copy; 2023 Strut Framework. Alpha Release.</small>
+    </footer>
+
+</body>
+</html>

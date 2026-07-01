@@ -1,0 +1,153 @@
+/*
+ * Strut CSS Framework v0.0.1a
+ * Build rock-solid web interfaces effortlessly.
+ */
+
+:root {
+	/*--- Colors ---*/
+	--strut-primary: #2563eb;
+	--strut-secondary: #475569;
+	--strut-success: #16a34a;
+	--strut-danger: #dc2626;
+	--strut-light: #f8fafc;
+	--strut-dark: #0f172a;
+
+	/*--- Spacing & Sizing---*/
+	--strut-spacing-xs: 0.25rem;
+	--strut-spacing-sm: 0.5rem;
+	--strut-spacing-md: 1rem;
+	--strut-spacing-lg: 1.5rem;
+	--strut-spacing-xl: 3rem;
+
+	/*--- Layout ---*/
+	--strut-container-width: 1200px;
+	--strut-radius: 4px;
+	--strut-font-main: system-ui, -apple-system, sans-serif;
+}
+
+/*--- Reset & Base ---*/
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--strut-font-main);
+	line-height: 1.6;
+	color: var(--strut-dark);
+	background-color: #fff;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/*--- Container ---*/
+.container {
+	width: 100%;
+	max-width: var(--strut-container-width);
+	margin-right: auto;
+	padding-left: var(--strut-spacing-md);
+	padding-right: var(--strut-spacing-md);
+}
+
+/*--- Grid System (12 Columns) ---*/
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: calc(var(--strut-spacing-sm) * -1);
+	margin-right: calc(var(--strut-spacing-sm) * -1);
+}
+
+[class*="col-"] {
+	padding-left: var(--strut-spacing-sm);
+	padding-right: var(--strut-spacing-sm);
+	width: 100%;
+}
+
+/* Desktop Grid Logic */
+@media (min-width: 768px) {
+	.col-1 { width: 8.33%; }
+	.col-2 { width: 16.66%; }
+	.col-3 { width: 25%; }
+	.col-4 { width: 33.33%; }
+	.col-5 { width: 41.66%; }
+	.col-6 { width: 50%; }
+	.col-7 { width: 58.33%; }
+	.col-8 { width: 66.66%; }
+	.col-9 { width: 75%; }
+	.col-10 { width: 83.33%; }
+	.col-11 { width: 91.66%; }
+	.col-12 { width: 100%; }
+}
+
+/*--- Typography ---*/
+h1,h2,h3,h4,h5,h6 {
+	margin-bottom: var(--strut-spacing-md);
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+.text-center { text-align: center; }
+.text-muted { color: var(--strut-secondary); }
+/*--- Buttons ---*/
+.btn {
+	display: inline-block;
+	padding: 0.6em 1.2em;
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: var(--strut-radius);
+	transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+	background-color: var(--strut-primary);
+	color: white;
+}
+.btn-primary:hover { background-color: #1d4ed8; }
+
+.btn-outline {
+	background-color: transparent;
+	border-color: var(--strut-secondary);
+	color: var(--strut-secondary);
+}
+.btn-outline:hover {
+	background-color: var(--strut-secondary);
+	color: white;
+}
+
+/*--- Cards ---*/
+.card {
+	background: white;
+	border: 1px solid #e2e8f0;
+	border-radius: var(--strut-radius);
+	padding: var(--strut-spacing-lg);
+	margin-bottom: var(--strut-spacing-md);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/*--- Utilities ---*/
+.mt-1 { margin-top: var(--strut-spacing-sm); }
+.mt-2 { margin-top: var(--strut-spacing-md); }
+.mb-2 { margin-bottom: var(--strut-spacing-md); }
+.p-2 { padding: var(--strut-spacing-md); }
+.hidden { display: none; }
+
+/* Mobile Visibility Helpers */@media (max-width: 767px) {
+	.hide-mobile { display: none !important; }
+}
+@media (min-width: 768px) {
+	.hide-desktop { display: none !important; }
+}
