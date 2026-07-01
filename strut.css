@@ -6,11 +6,14 @@
 :root {
 	/*--- Colors ---*/
 	--strut-primary: #2563eb;
+	--strut-primary-hover: #1d4ed8;
 	--strut-secondary: #475569;
 	--strut-success: #16a34a;
+	--strut-warning: #ca8a04;
 	--strut-danger: #dc2626;
 	--strut-light: #f8fafc;
 	--strut-dark: #0f172a;
+	--strut-border: #e2e8f0;
 
 	/*--- Spacing & Sizing---*/
 	--strut-spacing-xs: 0.25rem;
@@ -21,8 +24,9 @@
 
 	/*--- Layout ---*/
 	--strut-container-width: 1200px;
-	--strut-radius: 4px;
-	--strut-font-main: system-ui, -apple-system, sans-serif;
+	--strut-radius: 6px;
+	--strut-font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--strut-nav-height: 60px;
 }
 
 /*--- Reset & Base ---*/
@@ -37,6 +41,7 @@ body {
 	line-height: 1.6;
 	color: var(--strut-dark);
 	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -44,10 +49,21 @@ img {
 	display: block;
 }
 
+a {
+	color: var(--strut-primary);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+a:hover {
+	color: var(--strut-primary-hover);
+	text-decoration: underline;
+}
+
 /*--- Container ---*/
 .container {
 	width: 100%;
 	max-width: var(--strut-container-width);
+	margin-left: auto;
 	margin-right: auto;
 	padding-left: var(--strut-spacing-md);
 	padding-right: var(--strut-spacing-md);
@@ -57,30 +73,29 @@ img {
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: calc(var(--strut-spacing-sm) * -1);
-	margin-right: calc(var(--strut-spacing-sm) * -1);
+	gap: var(--strut-spacing-md);
+	margin-bottom: var(--strut-spacing-md);
 }
 
 [class*="col-"] {
-	padding-left: var(--strut-spacing-sm);
-	padding-right: var(--strut-spacing-sm);
+	flex: 1;
 	width: 100%;
 }
 
 /* Desktop Grid Logic */
 @media (min-width: 768px) {
-	.col-1 { width: 8.33%; }
-	.col-2 { width: 16.66%; }
-	.col-3 { width: 25%; }
-	.col-4 { width: 33.33%; }
-	.col-5 { width: 41.66%; }
-	.col-6 { width: 50%; }
-	.col-7 { width: 58.33%; }
-	.col-8 { width: 66.66%; }
-	.col-9 { width: 75%; }
-	.col-10 { width: 83.33%; }
-	.col-11 { width: 91.66%; }
-	.col-12 { width: 100%; }
+	.col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+	.col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+	.col-3 { flex: 0 0 25%; max-width: 25%; }
+	.col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+	.col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+	.col-6 { flex: 0 0 50%; max-width: 50%; }
+	.col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+	.col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+	.col-9 { flex: 0 0 75%; max-width: 75%; }
+	.col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+	.col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+	.col-12 { flex: 0 0 100%; max-width: 100% }
 }
 
 /*--- Typography ---*/
@@ -88,14 +103,49 @@ h1,h2,h3,h4,h5,h6 {
 	margin-bottom: var(--strut-spacing-md);
 	font-weight: 700;
 	line-height: 1.2;
+	color: var(--strut-dark);
 }
 
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.75rem; }
+p { margin-bottom: var(--strut-spacing-md); }
 
 .text-center { text-align: center; }
 .text-muted { color: var(--strut-secondary); }
+.text-small { font-size: 0.875rem; }
+
+/*--- Navigation ---*/
+.navbar {
+	background-color: var(--strut-dark);
+	color: white;
+	height: var(--strut-nav-height);
+	display: flex;
+	align-items: center;
+	padding: 0 var(--strut-spacing-md);
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: white;
+	margin-right: auto;
+}
+
+.navbar-nav {
+	display: flex;
+	list-style: none;
+	gap: var(--strut-spacing-lg);
+}
+
+.navbar-nav a {
+	color: rgba(255, 255, 255, 0.8);
+}
+.navbar-nav a:hover {
+	color: white;
+	text-decoration: none;
+}
+
 /*--- Buttons ---*/
 .btn {
 	display: inline-block;
@@ -110,32 +160,97 @@ h3 { font-size: 1.75rem; }
 	border: 1px solid transparent;
 	border-radius: var(--strut-radius);
 	transition: all 0.2s ease-in-out;
+	background-color: transparent;
 }
 
 .btn-primary {
 	background-color: var(--strut-primary);
 	color: white;
 }
-.btn-primary:hover { background-color: #1d4ed8; }
+.btn-primary:hover { 
+	background-color: var(--strut-primary-hover);
+	color: white;
+	text-decoration: none; 
+}
 
 .btn-outline {
-	background-color: transparent;
 	border-color: var(--strut-secondary);
 	color: var(--strut-secondary);
 }
 .btn-outline:hover {
 	background-color: var(--strut-secondary);
 	color: white;
+	text-decoration: none;
+}
+
+.btn-sm { padding: 0.4em 0.8em; font-size: 0.875rem; }
+.btn-lg { padding: 0.8em 1.6em; font-size: 1.125rem; }
+
+/*--- Forms ---*/
+.form-group {
+	margin-bottom: var(--strut-spacing-md);
+}
+
+.form-label {
+	display: block;
+	margin-bottom: var(--strut-spacing-xs);
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 0.6em 0.8em;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--strut-dark);
+	background-color: #fff;
+	border: 1px solid var(--strut-border);
+	border-radius: var(--strut-radius);
+	transition: border-box 0.2s;
+}
+
+form-control:focus {
+	outline: none;
+	border-color: var(--strut-primary);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /*--- Cards ---*/
 .card {
 	background: white;
-	border: 1px solid #e2e8f0;
+	border: 1px solid var(--strut-border);
 	border-radius: var(--strut-radius);
 	padding: var(--strut-spacing-lg);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/*--- Alerts ---*/
+.alert {
+	padding: var(--strut-spacing-md);
 	margin-bottom: var(--strut-spacing-md);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	border: 1px solid transparent;
+	border-radius: var(--strut-radius);
+	font-size: 0.95rem;
+}
+
+.alert-success {
+	background-color: #dcfce7;
+	color: #166534;
+	border-color: #bbf7d0;
+}
+
+.alert-warning {
+	background-color: #fef9c3;
+	color: #854d0e;
+	border-color: #fde047;
+}
+
+.alert-danger {
+	background-color: #fee2e2;
+	color: #991b1b;
+	border-color: #fecaca;
 }
 
 /*--- Utilities ---*/
@@ -143,10 +258,12 @@ h3 { font-size: 1.75rem; }
 .mt-2 { margin-top: var(--strut-spacing-md); }
 .mb-2 { margin-bottom: var(--strut-spacing-md); }
 .p-2 { padding: var(--strut-spacing-md); }
-.hidden { display: none; }
+.hidden { display: none !important; }
 
-/* Mobile Visibility Helpers */@media (max-width: 767px) {
+/* Mobile Visibility Helpers */
+@media (max-width: 767px) {
 	.hide-mobile { display: none !important; }
+	.navbar-nav { display: none; }
 }
 @media (min-width: 768px) {
 	.hide-desktop { display: none !important; }

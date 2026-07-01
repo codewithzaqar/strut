@@ -5,94 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strut - Rock Solid Interfaces</title>
     <link rel="stylesheet" href="strut.css">
-    <style>
-        /* Demo specific styles just for visualization */
-        .demo-box { background: #eef2ff; height: 100px; display: flex; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; border-radius: 4px; }
-        header { background: var(--strut-dark); color: white; padding: 2rem 0; margin-bottom: 2rem; }
-    </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Strut <span style="font-weight:300; opacity: 0.8;">v0.0.1a</span></h1>
-            <p>The ultimate responsive CSS framework.</p>
+    <nav class="navbar">
+        <div class="container" style="display: flex; width: 100%; align-items: center;">
+            <a href="#" class="navbar-brand">Strut</a>
+            <ul class="navbar-nav">
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#forms">Forms</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mt-2 text-center">
+        <h1>Strut <span class="text-muted" style="font-weight: 300;">v0.0.1a</span></h1>
+        <p class="text-muted" style="max-width: 600px; margin: 0 auto 2rem auto;">
+            The ultimate responsive CSS framework. Now with forms, alerts, and improved navigation.
+        </p>
+        <div>
+            <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="#" class="btn btn-outline btn-lg mt-1">Documentation</a>
+        </div>
+    </div>
+
+    <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #ccc;">
 
     <!-- Main Content -->
     <div class="container">
         
-        <!-- Section: Grid System -->
-        <section class="mb-2">
+        <!-- Alerts Demo -->
+        <section id="alerts" class="mb-2">
+            <h2>Alerts</h2>
+            <div class="alert alert-success">
+                <strong>Success!</strong> Your changes have been saved successfully.
+            </div>
+            <div class="alert alert-warning">
+                <strong>Warning!</strong> Please check your input before proceeding.
+            </div>
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Something went wrong. Please try again.
+            </div>
+        </section>
+
+        <!-- Grid System -->
+        <section id="grid" class="mb-2">
             <h2>The Grid System</h2>
-            <p>Resize your browser to see the columns stack on mobile and expand on desktop.</p>
-            
-            <div class="row mt-2">
-                <div class="col-4">
-                    <div class="demo-box">Col-4</div>
-                </div>
-                <div class="col-4">
-                    <div class="demo-box">Col-4</div>
-                </div>
-                <div class="col-4">
-                    <div class="demo-box">Col-4</div>
-                </div>
-            </div>
-
-            <div class="row mt-1">
-                <div class="col-8">
-                    <div class="demo-box">Col-8</div>
-                </div>
-                <div class="col-4">
-                    <div class="demo-box">Col-4</div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="mt-2 mb-2" style="border: 0; border-top: 1px solid #eee;">
-
-        <!-- Section: Components -->
-        <section class="mb-2">
-            <h2>Components</h2>
-            
             <div class="row">
-                <!-- Card 1 -->
                 <div class="col-4">
-                    <div class="card">
-                        <h3>Rock Solid</h3>
-                        <p class="text-muted">Built on a foundation of modern CSS variables and flexbox.</p>
-                        <button class="btn btn-primary mt-1">Learn More</button>
+                    <div class="card text-center">
+                        <h3>Col-4</h3>
+                        <p class="text-small">Responsive column</p>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="col-4">
-                    <div class="card">
-                        <h3>Responsive</h3>
-                        <p class="text-muted">Mobile-first approach ensures your site looks great on any device.</p>
-                        <button class="btn btn-outline mt-1">View Docs</button>
+                    <div class="card text-center">
+                        <h3>Col-4</h3>
+                        <p class="text-small">Responsive column</p>
                     </div>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="col-4">
-                    <div class="card">
-                        <h3>Lightweight</h3>
-                        <p class="text-muted">No bloat. Just the essentials you need to build fast.</p>
-                        <a href="#" class="btn btn-primary mt-1">Download</a>
+                    <div class="card text-center">
+                        <h3>Col-4</h3>
+                        <p class="text-small">Responsive coluumn</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section: Utilities -->
-        <section>
-            <h2>Utilities</h2>
-            <p>Quick classes for spacing and visibility.</p>
-            <div class="p-2" style="background: #f1f5f9; border-radius: 4px;">
-                <code>.text-center</code>, <code>.mt-2</code>, <code>.hidden</code>, <code>.hide-mobile</code>
+        <!-- Forms Demo -->
+        <section id="forms" class="mb-2">
+            <h2>Forms</h2>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <h3>Login</h3>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" placeholder="********">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <h3>Contact Us</h3>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <select class="form-control">
+                                    <option>General Inquiry</option>
+                                    <option>Support</option>
+                                    <option>Sales</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
 
