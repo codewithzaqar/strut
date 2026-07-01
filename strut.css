@@ -1,6 +1,7 @@
 /* 
- * Strut CSS Framework v0.0.1a03
+ * Strut CSS Framework v0.0.1
  * Build rock-solid web interfaces effortlessly.
+ * Stable Release
  */
 
 :root {
@@ -29,6 +30,10 @@
     --strut-radius: 6px;
     --strut-font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --strut-nav-height: 60px;
+    
+    /* --- Effects --- */
+    --strut-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --strut-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* --- Reset & Base --- */
@@ -125,6 +130,9 @@ p { margin-bottom: var(--strut-spacing-md); }
     display: flex;
     align-items: center;
     padding: 0 var(--strut-spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -200,7 +208,11 @@ p { margin-bottom: var(--strut-spacing-md); }
     border: 1px solid var(--strut-border);
     border-radius: var(--strut-radius);
     padding: var(--strut-spacing-lg);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: var(--strut-shadow-sm);
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: var(--strut-shadow-md);
 }
 
 /* --- Alerts --- */
@@ -303,12 +315,65 @@ p { margin-bottom: var(--strut-spacing-md); }
     background: white;
 }
 .accordion-input:checked ~ .accordion-content {
-    max-height: 500px; /* Arbitrary large height */
+    max-height: 500px;
     padding: 1rem;
     border-top: 1px solid var(--strut-border);
 }
 .accordion-input:checked ~ .accordion-label::after {
     content: '-';
+}
+
+/* --- Tooltips (Pure CSS) --- */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: var(--strut-dark);
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    margin-bottom: 5px;
+    z-index: 10;
+}
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Pagination --- */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 0.25rem;
+}
+.page-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--strut-border);
+    border-radius: var(--strut-radius);
+    color: var(--strut-primary);
+    transition: all 0.2s;
+}
+.page-link:hover {
+    background-color: var(--strut-bg-alt);
+    text-decoration: none;
+}
+.page-link.active {
+    background-color: var(--strut-primary);
+    color: white;
+    border-color: var(--strut-primary);
 }
 
 /* --- Flex Utilities --- */

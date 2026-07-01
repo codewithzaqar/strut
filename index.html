@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strut v0.0.1a - Rock Solid Interfaces</title>
+    <title>Strut v0.0.1 - Rock Solid Interfaces</title>
     <link rel="stylesheet" href="strut.css">
 </head>
 <body>
@@ -13,154 +13,74 @@
         <div class="container" style="display: flex; width: 100%; align-items: center;">
             <a href="#" class="navbar-brand">Strut</a>
             <ul class="navbar-nav">
-                <li><a href="#tables">Tables</a></li>
                 <li><a href="#components">Components</a></li>
                 <li><a href="#utilities">Utilities</a></li>
+                <li><a href="https://github.com/codewithzaqar/strut">GitHub</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero -->
     <div class="container mt-2 text-center">
-        <h1>Strut <span class="text-muted" style="font-weight:300;">v0.0.1a</span></h1>
-        <p class="text-muted">Now featuring Tables, Badges, Progress Bars, and Pure CSS Accordions.</p>
+        <h1>Strut <span class="badge badge-primary" style="vertical-align: middle;">v0.0.1</span></h1>
+        <p class="text-muted">The ultimate responsive CSS framework. Stable Release.</p>
+        <div class="d-flex justify-center gap-2 mt-2">
+            <a href="#" class="btn btn-primary btn-lg">Download</a>
+            <a href="#" class="btn btn-outline btn-lg">Documentation</a>
+        </div>
     </div>
 
     <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
 
     <div class="container">
         
-        <!-- Tables -->
-        <section id="tables" class="mb-2">
-            <h2>Tables</h2>
-            <div class="card p-0" style="padding: 0; overflow: hidden;">
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>User</th>
-                                <th>Status</th>
-                                <th>Role</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>101</td>
-                                <td>Alice Johnson</td>
-                                <td><span class="badge badge-success">Active</span></td>
-                                <td>Admin</td>
-                            </tr>
-                            <tr>
-                                <td>102</td>
-                                <td>Bob Smith</td>
-                                <td><span class="badge badge-secondary">Pending</span></td>
-                                <td>Editor</td>
-                            </tr>
-                            <tr>
-                                <td>103</td>
-                                <td>Charlie Brown</td>
-                                <td><span class="badge badge-danger">Inactive</span></td>
-                                <td>Viewer</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
         <!-- Components Grid -->
         <section id="components" class="mb-2">
-            <h2>Advanced Components</h2>
+            <h2>New in v0.0.1</h2>
             <div class="row">
                 
-                <!-- Progress Bars -->
+                <!-- Tooltips -->
                 <div class="col-6">
                     <div class="card">
-                        <h3>Progress Bars</h3>
-                        <label class="form-label">Storage Used (75%)</label>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 75%">75%</div>
-                        </div>
-                        
-                        <label class="form-label">Task Completion (40%)</label>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" style="width: 40%; background-color: var(--strut-success);">40%</div>
-                        </div>
-
-                        <label class="form-label">Error Rate (15%)</label>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 15%; background-color: var(--strut-danger);">15%</div>
-                        </div>
+                        <h3>Tooltips</h3>
+                        <p>Hover over these elements:</p>
+                        <button class="btn btn-outline" data-tooltip="This is a tooltip!">Hover Me</button>
+                        <span class="text-muted ml-2" data-tooltip="Pure CSS implementation">Info Icon</span>
                     </div>
                 </div>
 
-                <!-- Badges -->
+                <!-- Pagination -->
                 <div class="col-6">
                     <div class="card">
-                        <h3>Badges</h3>
-                        <p>Use badges to highlight new features or status.</p>
-                        <button class="btn btn-primary">
-                            Notifications <span class="badge badge-danger" style="margin-left: 5px;">3</span>
-                        </button>
-                        <br><br>
-                        <h4>Version 2.0 <span class="badge badge-primary">New</span></h4>
-                        <p class="text-muted">Check out the latest updates.</p>
+                        <h3>Pagination</h3>
+                        <ul class="pagination">
+                            <li><a href="#" class="page-link">&laquo;</a></li>
+                            <li><a href="#" class="page-link">1</a></li>
+                            <li><a href="#" class="page-link active">2</a></li>
+                            <li><a href="#" class="page-link">3</a></li>
+                            <li><a href="#" class="page-link">&raquo;</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Accordion -->
+            <!-- Existing Components Recap -->
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="card">
-                        <h3>Pure CSS Accordion</h3>
-                        <p>No JavaScript required. Uses the checkbox hack.</p>
-                        
-                        <div class="accordion-item">
-                            <input type="checkbox" id="acc1" class="accordion-input">
-                            <label for="acc1" class="accordion-label">What is Strut?</label>
-                            <div class="accordion-content">
-                                <p>Strut is a lightweight CSS framework designed for speed and simplicity.</p>
+                        <h3>Core Components Recap</h3>
+                        <div class="d-flex gap-2 flex-column">
+                            <div class="alert alert-success">Success Alert</div>
+                            <div class="progress"><div class="progress-bar" style="width: 60%">60%</div></div>
+                            <div class="accordion-item">
+                                <input type="checkbox" id="acc-demo" class="accordion-input">
+                                <label for="acc-demo" class="accordion-label">Accordion Example</label>
+                                <div class="accordion-content">
+                                    <p>Content hidden by default.</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="accordion-item">
-                            <input type="checkbox" id="acc2" class="accordion-input">
-                            <label for="acc2" class="accordion-label">Is it responsive?</label>
-                            <div class="accordion-content">
-                                <p>Yes! It uses a mobile-first 12-column grid system that adapts to any screen size.</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <input type="checkbox" id="acc3" class="accordion-input">
-                            <label for="acc3" class="accordion-label">How do I customize it?</label>
-                            <div class="accordion-content">
-                                <p>Simply edit the CSS variables in the :root selector of strut.css.</p>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Utilities Demo -->
-        <section id="utilities" class="mb-2">
-            <h2>Flex Utilities</h2>
-            <div class="card">
-                <p>Quickly align items without writing custom CSS.</p>
-                
-                <div class="d-flex justify-between align-center p-2" style="background: #f8fafc; border: 1px dashed #ccc; margin-bottom: 10px;">
-                    <span>Left Item</span>
-                    <span>Right Item</span>
-                </div>
-
-                <div class="d-flex justify-center gap-2 p-2" style="background: #f8fafc; border: 1px dashed #ccc;">
-                    <button class="btn btn-sm btn-outline">One</button>
-                    <button class="btn btn-sm btn-outline">Two</button>
-                    <button class="btn btn-sm btn-outline">Three</button>
                 </div>
             </div>
         </section>
@@ -168,7 +88,7 @@
     </div>
 
     <footer class="container mt-2 p-2 text-center text-muted">
-        <small>&copy; 2023 Strut Framework. Alpha Release v0.0.1a03.</small>
+        <small>&copy; 2023 Strut Framework. Stable Release v0.0.1.</small>
     </footer>
 
 </body>
